@@ -126,6 +126,10 @@ class SessionHandler(SocketServer.StreamRequestHandler):
                 continue
             if line == 'EXIT':
                 return
+            if line == 'STATS':
+                dht.print_routing_table_stats()
+                dht.print_routing_table()
+                continue
             splitted_line = line.split()
             try:
                 recv = self._get_recv(splitted_line)
