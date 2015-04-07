@@ -214,6 +214,7 @@ class Controller:
             msg = self.msg_f.incoming_msg(datagram)
             
         except(message.MsgError):
+            print('DBG ignoring msg ' + str(datagram.data))
             # ignore message
             return self._next_main_loop_call_ts, datagrams_to_send
 
@@ -305,7 +306,7 @@ class Controller:
                 self._routing_m.on_error_received(addr)
 
         else: # unknown type
-            logger.debug('Got unknown message:\n%r', msg)
+            print('DBG unknown message ' + str(msg))
             return self._next_main_loop_call_ts, datagrams_to_send
         # we are done with the plugins
         # now we have maintenance_queries_to_send, let's send them!
