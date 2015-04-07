@@ -5,6 +5,12 @@ The 'telnet' interface listens on a TCP port (use --telnet-port option) for comm
 
 Create a new channel (lookup):
 
+<channel_recv> OPEN <channel_send> HASH <hex_info_hash> <bt_port>
+<channel_recv>: channel number, 0 = new channel
+<channel_send>: ?
+<hex_info_hash>: Hash to search peers for
+<bt_port>: Announced BitTorrent port, 0 = no announce
+
 >>> 0 OPEN 0 HASH 12345678901234567890 0
 0 OPEN 1
 0 PEER 93.41.172.20:22650

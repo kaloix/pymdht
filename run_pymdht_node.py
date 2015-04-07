@@ -45,8 +45,8 @@ def main2(options, args):
     if options.debug:
         logs_level = logging.DEBUG # This generates HUGE (and useful) logs
     else:
-        #logs_level = logging.INFO # This generates some (useful) logs
-        logs_level = logging.WARNING # This generates warning and error logs
+        logs_level = logging.INFO # This generates some (useful) logs
+        #logs_level = logging.WARNING # This generates warning and error logs
 
         
     

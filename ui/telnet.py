@@ -26,7 +26,7 @@ class Telnet(object):
         dht = dht_
         self.dht = dht
         self.port = port
-        self.server = SocketServer.TCPServer(('', port), SessionHandler)
+        self.server = SocketServer.TCPServer(('127.0.0.1', port), SessionHandler)
 
     def start(self):
         while not stop_server:
